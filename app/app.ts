@@ -3,6 +3,8 @@ import {ionicBootstrap, Platform, MenuController, Nav} from 'ionic-angular';
 import {StatusBar} from 'ionic-native';
 import {HelloIonicPage} from './pages/hello-ionic/hello-ionic';
 import {ListPage} from './pages/list/list';
+import {HomePage} from "./pages/home/home";
+import {LoginFormPage} from "./pages/login-form/login-form";
 
 
 @Component({
@@ -11,8 +13,7 @@ import {ListPage} from './pages/list/list';
 class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  // make HelloIonicPage the root (or first) page
-  rootPage: any = HelloIonicPage;
+  rootPage: any = HomePage;
   pages: Array<{title: string, component: any}>;
 
   constructor(
@@ -21,10 +22,24 @@ class MyApp {
   ) {
     this.initializeApp();
 
+    window.localStorage.setItem('accessTocken', null);
+
+    // if((window.localStorage.getItem('accessTocken') === "undefined" || window.localStorage.getItem('accessTocken') === null || window.localStorage.getItem('accessTocken') === 'null') ) {
+    //   this.rootPage = LoginFormPage;
+    // } else {
+    //   this.rootPage = HomePage;
+    // }
+
+    // this.rootPage = HomePage;
+
+    // console.log( window.localStorage.getItem('accessTocken') );
+
     // set our app's pages
     this.pages = [
       { title: 'Hello Ionic', component: HelloIonicPage },
-      { title: 'My First List', component: ListPage }
+      { title: 'My First List', component: ListPage },
+      { title: 'Home Page', component: HomePage },
+      { title: 'Login there', component: LoginFormPage }
     ];
   }
 
@@ -42,6 +57,8 @@ class MyApp {
     // navigate to the new page if it is not the current page
     this.nav.setRoot(page.component);
   }
+
+
 }
 
 ionicBootstrap(MyApp);

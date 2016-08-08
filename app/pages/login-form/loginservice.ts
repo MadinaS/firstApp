@@ -1,107 +1,70 @@
-import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
-import {FORM_DIRECTIVES, FormBuilder, ControlGroup, Validators, AbstractControl} from '@angular/common';
-import {CustomValidators} from '../validators/CustomValidators';
-//noinspection TypeScriptCheckImport
-import {Http, Response, Headers, RequestOptions, Request, RequestMethod} from '@angular/http';
+import {Http, Headers, RequestOptions} from '@angular/http';
 import 'rxjs/add/operator/map';
-import {bootstrap} from '@angular/platform-browser-dynamic';
 
-
-/*
-  Generated class for the LoginFormPage page.
-
-  See http://ionicframework.com/docs/v2/components/#navigation for more info on
-  Ionic pages and navigation.
-*/
-@Component({
-  templateUrl: 'build/pages/login-form/login-form.html',
-  directives: [FORM_DIRECTIVES]
-})
-export class LoginFormPage {
-
-  authForm: ControlGroup;
-  username: AbstractControl;
-  password: AbstractControl;
-
+export class LoginService {
   static get parameters() {
     return [[Http]];
   }
 
+  constructor(private http:Http) {
 
-
-  constructor(private nav: NavController, private http: Http, private fb: FormBuilder) {
-    this.authForm = new FormBuilder().group({
-      'username': ['', Validators.compose([Validators.required, Validators.minLength(6), CustomValidators.checkFirstCharacterValidator])],
-      'password': ['', Validators.compose([Validators.required, Validators.minLength(3), CustomValidators.checkFirstCharacterValidator])]
-    });
-
-    // http.post('https://www.facebook.com/', '123').map(res => res.json());
-
-    this.username = this.authForm.controls['username'];
-    this.password = this.authForm.controls['password'];
   }
 
-  onSubmit(value: string): void {
-    if(this.authForm.valid) {
-      var http = Http;
-      // var url = 'localhost/appkey/api';
+  searchMovies(name, pass) {
+    // var http = Http;
+    // var url = 'http://deviamais.formulardb.de/auth/login?login=Login&username=' + name + '&password=' + pass;
+    // var response = this.http.get(url).map(res => res.json());
+    // return response;
 
-      let headers = new Headers({ 'Content-Type': 'application/jsonp' });
+
+    var http = Http;
+
+      let body = JSON.stringify({ 'login': 'Login', 'password': 'dudh1234', 'username': 'admin' });
+      let headers = new Headers({ 'Content-Type': 'application/json' });
       let options = new RequestOptions({ headers: headers });
 
-      var resss = Http.get('http://deviamais.formulardb.de/auth/login')
-          // .map(res => res.json())
-          .map(request => <string[]> request.json()[1])
-          .subscribe(
-          name => { value['username'] },
-          () => console.log('done')
-      );
-
-// var http = Http;
-//
-//       let body = JSON.stringify({ 'login': 'Login', 'password': 'dudh1234', 'username': 'admin' });
-//       let headers = new Headers({ 'Content-Type': 'text/html' });
-//       let options = new RequestOptions({ headers: headers });
-//
-//       var resss = this.http.post('http://deviamais.formulardb.de/auth/login', body, options)
-//           .map(res => res);
-
-      // console.log(resss);
-
-
-
-      // var options = new RequestOptions({
-      //   method: RequestMethod.Post,
-      //   url: 'https://google.com'
-      // });
-      // var req = new Request(options);
-
-
-
-      // var arg = new RequestOptions ({
-      //   method: RequestMethod.Post,
-      // });
-
-      // //noinspection TypeScriptUnresolvedFunction
-      // this.jsonp.request('http://deviamais.formulardb.de/auth/login').map(res => {
-      //   var people = res.json();
-      //   console.log(people);
-      // });
-
-
-
-
-
-
-      // Http.post('http://localhost/appkey/api').then(function (res) {
-      //   startGenerateKey(res.data);
-      // });
-
-      console.log('Submitted value: ', value['username']);
-      // return response;
-
-    }
+    var url = 'http://localhost/shopware/app/index';
+    var response = this.http.post(url, body, options).map(res => res.json());
+    console.log(response);
+    return response;
   }
-}
 
+  loginToServer(name, pass) {
+    // var http = Http;
+    // var url = 'http://deviamais.formulardb.de/auth/login?login=Login&username=' + name + '&password=' + pass;
+    // var response = this.http.get(url).map(res => res.json());
+    // return response;
+
+
+    var http = Http;
+
+    let body = JSON.stringify({ 'password': 'dudh1234', 'username': 'admin' });
+    let headers = new Headers({ 'Content-Type': 'application/json',
+                      'Access-Control-Allow-Origin': '*',
+                      'Access-Control-Allow-Headers': 'Accept'});
+    let options = new RequestOptions({ headers: headers });
+
+    var url = 'http://localhost/shopware/app/login/';
+    var response = this.http.post(url, body, options).map(res => res.json());
+    // console.log(response.["success"]);
+    return response;
+  }
+
+
+//   registerMe(name, pass) {
+//     var details = {
+//       'email': 'email@example.com',
+//       'password': 'secret'
+//     }
+//
+// // optionally pass a username
+// // details.username = 'ionitron';
+//
+//
+//
+//     Ionic.Auth.signup(details).then(signupSuccess, signupFailure);
+//   }
+
+
+
+}
