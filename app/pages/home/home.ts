@@ -4,7 +4,7 @@ import {FORM_DIRECTIVES, FormBuilder, ControlGroup, Validators, AbstractControl}
 import {CustomValidators} from '../validators/CustomValidators';
 import 'rxjs/add/operator/map';
 import {LoginService} from '../login-form/loginservice';
-// import {HomePage} from "../home/home";
+// import { subWindowsObject } from '../home/subWindows/subWindowsObject';
 
 /*
   Generated class for the HomePage page.
@@ -16,24 +16,78 @@ import {LoginService} from '../login-form/loginservice';
   templateUrl: 'build/pages/home/home.html',
   directives: [FORM_DIRECTIVES],
   providers: [LoginService]
+  
+  // userName: 'Madina'
 })
 export class HomePage {
-  // authForm: ControlGroup;
-  // username: AbstractControl;
-  // password: AbstractControl;
-  character;
-  //--------
 
+  public userName;
+  private platform;
 
   constructor(private nav: NavController,
               public loginService: LoginService,
-              private fb: FormBuilder)
+              private fb: FormBuilder,
+              plat: Platform
+              )
   {
-    if((window.localStorage.getItem('accessTocken') === "undefined" || window.localStorage.getItem('accessTocken') === null || window.localStorage.getItem('accessTocken') === 'null') ) {
-        let modal = Modal.create(ModalsContentPage);
-        this.nav.present(modal);
-    }
+    this.platform = plat;
+
+    console.log( this.platform.platforms() );
+
+    // document.getElementById("hierUserName").innerHTML = 'platform: ' + Platform;
+
+    // console.log((window.localStorage.getItem('accessTocken') === "undefined" || window.localStorage.getItem('accessTocken') === null || window.localStorage.getItem('accessTocken') === 'null') );
+    // if((window.localStorage.getItem('accessTocken') === "undefined" || window.localStorage.getItem('accessTocken') === null || window.localStorage.getItem('accessTocken') === 'null') ) {
+    //     let modal = Modal.create(ModalsContentPage);
+    //     this.nav.present(modal);
+    // } else {
+    //
+    // }
+
+      if((window.localStorage.getItem('accessTocken') === "undefined" || window.localStorage.getItem('accessTocken') === null || window.localStorage.getItem('accessTocken') === 'null') ) {
+          var subWindows = new subWindowsObject();
+          var htmlStr = new subWindows.getNoLoginLook();
+          document.getElementById("hierTest").innerHTML = htmlStr;
+      } else {
+
+      }
+      
   }
+  ionViewWillEnter() { // THERE IT IS!!!
+    // descktop = core
+
+    console.log( document.getElementById("hierIsContent") );
+
+    if ( this.platform.is('ios') ) {
+      // document.getElementById("hierIsContent").style.backgroundImage = "url('/img/ios_background.jpg') no-repeat";
+      // var htmlStr = "<span>" +
+      //     "height: " + window.innerHeight +
+      //     "</span><br />" +
+      //     "<span>" +
+      //     "width: " + window.innerWidth +
+      //     "</span><br />" +
+      //     "<span>" +
+      //     "body: " + document.getElementsByTagName('body') +
+      //     "</span>" +
+      //     "";
+    } else {
+      // document.getElementById("hierIsContent").style.backgroundImage = "url('/img/core_background.jpg') no-repeat";
+      var htmlStr = "<span>" +
+          "height: " + window.innerHeight +
+          "</span><br />" +
+          "<span>" +
+          "width: " + window.innerWidth +
+          "</span>" +
+          "";
+    }
+
+    // document.getElementById("hierTest").parentElement.style.backgroundImage = './img/ios_background.jpg';
+
+    // document.getElementById("hierTest").innerHTML = htmlStr;
+    console.log( this.platform.platforms() );
+    // document.getElementById("hierUserName").innerHTML = window.localStorage.getItem('myName');
+  }
+
 
   // onSubmit(value: string): void {
   //   if(this.authForm.valid) {
@@ -106,7 +160,6 @@ class ModalsContentPage {
     this.username = this.authForm.controls['username'];
     this.password = this.authForm.controls['password'];
 
-    this
   }
 
   onSubmit(value: string): void {
@@ -123,7 +176,10 @@ class ModalsContentPage {
               //noinspection TypeScriptUnresolvedVariable
               window.localStorage.setItem('myName', data.myName);
 
-              this.nav.push(HomePage);
+              console.log( window.localStorage.getItem('myName') );
+              document.getElementById("hierUserName").innerHTML = window.localStorage.getItem('myName');
+              this.viewCtrl.dismiss();
+              // this.nav.push(HomePage);
             }
 
           },

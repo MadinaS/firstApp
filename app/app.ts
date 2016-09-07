@@ -7,6 +7,7 @@ import {HomePage} from "./pages/home/home";
 import {LoginFormPage} from "./pages/login-form/login-form";
 
 
+
 @Component({
   templateUrl: 'build/app.html'
 })
@@ -23,6 +24,10 @@ class MyApp {
     this.initializeApp();
 
     window.localStorage.setItem('accessTocken', null);
+    window.localStorage.setItem('myName', null);
+
+    // window.localStorage.setItem('accessTocken', 'Madina S');
+    // window.localStorage.setItem('myName', 'qwe123');
 
     // if((window.localStorage.getItem('accessTocken') === "undefined" || window.localStorage.getItem('accessTocken') === null || window.localStorage.getItem('accessTocken') === 'null') ) {
     //   this.rootPage = LoginFormPage;
