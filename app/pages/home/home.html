@@ -4,17 +4,22 @@
   See http://ionicframework.com/docs/v2/components/#navigation for more info on
   Ionic pages and navigation.
 -->
-<ion-header>
+<ion-header class="has-header">
 
   <ion-navbar id="navBarHier">
+
     <button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title><div id="hierUserName">!</div></ion-title>
+
+    <ion-title>
+      <div id="hierUserName">Home</div>
+    </ion-title>
+
   </ion-navbar>
 
 </ion-header>
 
-<ion-content padding id="hierIsContent" class="ion-content">
+<ion-content padding scroll="false" id="hierIsContent" class="ion-content has-header">
   <div id="hierTest"></div>
 </ion-content>

@@ -16,6 +16,7 @@ class MyApp {
 
   rootPage: any = HomePage;
   pages: Array<{title: string, component: any}>;
+  navVariables: string;
 
   constructor(
     private platform: Platform,
@@ -23,11 +24,12 @@ class MyApp {
   ) {
     this.initializeApp();
 
-    window.localStorage.setItem('accessTocken', null);
-    window.localStorage.setItem('myName', null);
+    // window.localStorage.setItem('accessTocken', null);
+    // window.localStorage.setItem('myName', null);
 
-    // window.localStorage.setItem('accessTocken', 'Madina S');
-    // window.localStorage.setItem('myName', 'qwe123');
+    window.localStorage.setItem('myName', 'Madina S');
+    window.localStorage.setItem('beschreibung', 'Mein klein Text hier.');
+    window.localStorage.setItem('accessTocken', 'qwe123');
 
     // if((window.localStorage.getItem('accessTocken') === "undefined" || window.localStorage.getItem('accessTocken') === null || window.localStorage.getItem('accessTocken') === 'null') ) {
     //   this.rootPage = LoginFormPage;
@@ -41,11 +43,14 @@ class MyApp {
 
     // set our app's pages
     this.pages = [
+      { title: 'Home', component: HomePage },
       { title: 'Hello Ionic', component: HelloIonicPage },
-      { title: 'My First List', component: ListPage },
-      { title: 'Home Page', component: HomePage },
-      { title: 'Login there', component: LoginFormPage }
+      { title: 'Home', component: HomePage },
+      { title: 'Hello Ionic', component: HelloIonicPage },
+      { title: 'Home', component: HomePage }
     ];
+
+    this.navVariables = window.localStorage.getItem('myName');
   }
 
   initializeApp() {

@@ -4,7 +4,8 @@ import {FORM_DIRECTIVES, FormBuilder, ControlGroup, Validators, AbstractControl}
 import {CustomValidators} from '../validators/CustomValidators';
 import 'rxjs/add/operator/map';
 import {LoginService} from '../login-form/loginservice';
-// import { subWindowsObject } from '../home/subWindows/subWindowsObject';
+import {subWindowsObject} from "./subWindows/subWindowsObject";
+// import { subWindowsObject } from './subWindows/subWindowsObject';
 
 /*
   Generated class for the HomePage page.
@@ -15,7 +16,7 @@ import {LoginService} from '../login-form/loginservice';
 @Component({
   templateUrl: 'build/pages/home/home.html',
   directives: [FORM_DIRECTIVES],
-  providers: [LoginService]
+  providers: [LoginService, subWindowsObject]
   
   // userName: 'Madina'
 })
@@ -23,70 +24,87 @@ export class HomePage {
 
   public userName;
   private platform;
+    public modal;
 
   constructor(private nav: NavController,
               public loginService: LoginService,
               private fb: FormBuilder,
-              plat: Platform
+              plat: Platform,
+              subWindows: subWindowsObject
               )
   {
     this.platform = plat;
 
-    console.log( this.platform.platforms() );
+    console.log( window.localStorage.getItem('accessTocken') );
 
     // document.getElementById("hierUserName").innerHTML = 'platform: ' + Platform;
 
     // console.log((window.localStorage.getItem('accessTocken') === "undefined" || window.localStorage.getItem('accessTocken') === null || window.localStorage.getItem('accessTocken') === 'null') );
-    // if((window.localStorage.getItem('accessTocken') === "undefined" || window.localStorage.getItem('accessTocken') === null || window.localStorage.getItem('accessTocken') === 'null') ) {
-    //     let modal = Modal.create(ModalsContentPage);
-    //     this.nav.present(modal);
-    // } else {
-    //
-    // }
+    if((window.localStorage.getItem('accessTocken') === "undefined" || window.localStorage.getItem('accessTocken') === null || window.localStorage.getItem('accessTocken') === 'null') ) {
+        this.modal = Modal.create(ModalsContentPage);
+        // this.nav.present(this.modal);
+    } else {
 
-      if((window.localStorage.getItem('accessTocken') === "undefined" || window.localStorage.getItem('accessTocken') === null || window.localStorage.getItem('accessTocken') === 'null') ) {
-          var subWindows = new subWindowsObject();
-          var htmlStr = new subWindows.getNoLoginLook();
-          document.getElementById("hierTest").innerHTML = htmlStr;
-      } else {
+    }
 
-      }
+      // if((window.localStorage.getItem('accessTocken') === "undefined" || window.localStorage.getItem('accessTocken') === null || window.localStorage.getItem('accessTocken') === 'null') ) {
+      //     // var subWindows = subWindowsObject();
+      //     var htmlStr = subWindows.getNoLoginLook();
+      //     // document.getElementById("hierTest").innerHTML = htmlStr;
+      // } else {
+      //
+      // }
       
   }
   ionViewWillEnter() { // THERE IT IS!!!
     // descktop = core
 
-    console.log( document.getElementById("hierIsContent") );
+      if((window.localStorage.getItem('accessTocken') === "undefined" || window.localStorage.getItem('accessTocken') === null || window.localStorage.getItem('accessTocken') === 'null') ) {
+          this.nav.present(this.modal);
+      } else {
+          document.getElementById("hierUserName").innerHTML = 'Willkommen zurueck ' + window.localStorage.getItem('myName') + '!';
+      }
 
-    if ( this.platform.is('ios') ) {
-      // document.getElementById("hierIsContent").style.backgroundImage = "url('/img/ios_background.jpg') no-repeat";
-      // var htmlStr = "<span>" +
-      //     "height: " + window.innerHeight +
-      //     "</span><br />" +
-      //     "<span>" +
-      //     "width: " + window.innerWidth +
-      //     "</span><br />" +
-      //     "<span>" +
-      //     "body: " + document.getElementsByTagName('body') +
-      //     "</span>" +
-      //     "";
-    } else {
-      // document.getElementById("hierIsContent").style.backgroundImage = "url('/img/core_background.jpg') no-repeat";
-      var htmlStr = "<span>" +
-          "height: " + window.innerHeight +
-          "</span><br />" +
-          "<span>" +
-          "width: " + window.innerWidth +
-          "</span>" +
-          "";
-    }
 
-    // document.getElementById("hierTest").parentElement.style.backgroundImage = './img/ios_background.jpg';
-
-    // document.getElementById("hierTest").innerHTML = htmlStr;
-    console.log( this.platform.platforms() );
-    // document.getElementById("hierUserName").innerHTML = window.localStorage.getItem('myName');
+    console.log( window.localStorage.getItem('accessTocken') );
   }
+
+    ionViewWillLeave() { // THERE IT IS!!!
+        // descktop = core
+
+        if((window.localStorage.getItem('accessTocken') === "undefined" || window.localStorage.getItem('accessTocken') === null || window.localStorage.getItem('accessTocken') === 'null') ) {
+            this.nav.present(this.modal);
+        } else {
+            document.getElementById("hierUserName").innerHTML = 'Willkommen zurueck ' + window.localStorage.getItem('myName') + '!';
+        }
+
+
+
+
+        if ( this.platform.is('ios') ) {
+            // document.getElementById("hierIsContent").style.backgroundImage = "url('/img/ios_background.jpg') no-repeat";
+            // var htmlStr = "<span>" +
+            //     "height: " + window.innerHeight +
+            //     "</span><br />" +
+            //     "<span>" +
+            //     "width: " + window.innerWidth +
+            //     "</span><br />" +
+            //     "<span>" +
+            //     "body: " + document.getElementsByTagName('body') +
+            //     "</span>" +
+            //     "";
+        } else {
+
+            // var htmlStr = "<span>" +
+            //     "height: " + window.innerHeight +
+            //     "</span><br />" +
+            //     "<span>" +
+            //     "width: " + window.innerWidth +
+            //     "</span>" +
+            //     "";
+        }
+        console.log( window.localStorage.getItem('accessTocken') );
+    }
 
 
   // onSubmit(value: string): void {

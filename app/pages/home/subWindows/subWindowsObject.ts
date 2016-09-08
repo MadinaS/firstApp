@@ -9,7 +9,7 @@
 //     // providers: [LoginService]
 // })
 
-class subWindowsObject {
+export class subWindowsObject {
     constructor() {
 
     }

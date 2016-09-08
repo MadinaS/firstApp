@@ -1,12 +1,19 @@
-<ion-menu [content]="content">
+<ion-menu [content]="content" scroll="false" style="overflow: unset;">
 
   <ion-toolbar>
-    <ion-title>Pages</ion-title>
+
+    <!--<ion-title>Pages</ion-title>-->
   </ion-toolbar>
 
-  <ion-content>
+  <ion-content scroll="false">
+    <div style="text-align: center;margin-bottom: 100px;margin-top: 100px;background-color: #4A397D;">
+      <div id="divStyle" style=""></div>
+      <div style="margin-top: 20px;"> {{navVariables.name}} </div>
+      <div style="margin-top: 20px;"> {{navVariables.beschr}} </div>
+    </div>
+
     <ion-list>
-      <button ion-item *ngFor="let p of pages" (click)="openPage(p)">
+      <button ion-item *ngFor="let p of pages" (click)="openPage(p)" class="myMenuButtons">
         {{p.title}}
       </button>
     </ion-list>
