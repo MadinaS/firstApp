@@ -2,7 +2,7 @@ import {Component, ViewChild} from '@angular/core';
 import {ionicBootstrap, Platform, MenuController, Nav} from 'ionic-angular';
 import {StatusBar} from 'ionic-native';
 import {HelloIonicPage} from './pages/hello-ionic/hello-ionic';
-import {ListPage} from './pages/list/list';
+import {ProfilPage} from './pages/profil/profil';
 import {HomePage} from "./pages/home/home";
 import {LoginFormPage} from "./pages/login-form/login-form";
 
@@ -16,7 +16,7 @@ class MyApp {
 
   rootPage: any = HomePage;
   pages: Array<{title: string, component: any}>;
-  navVariables: string;
+  navVariables: {name: string, beschr: string};
 
   constructor(
     private platform: Platform,
@@ -45,12 +45,12 @@ class MyApp {
     this.pages = [
       { title: 'Home', component: HomePage },
       { title: 'Hello Ionic', component: HelloIonicPage },
-      { title: 'Home', component: HomePage },
-      { title: 'Hello Ionic', component: HelloIonicPage },
-      { title: 'Home', component: HomePage }
+      { title: 'Einstellungen', component: ProfilPage }
     ];
 
-    this.navVariables = window.localStorage.getItem('myName');
+    this.navVariables =
+      { name: window.localStorage.getItem('myName'),
+        beschr: window.localStorage.getItem('beschreibung') };
   }
 
   initializeApp() {

@@ -75,7 +75,7 @@ export class HomePage {
         if((window.localStorage.getItem('accessTocken') === "undefined" || window.localStorage.getItem('accessTocken') === null || window.localStorage.getItem('accessTocken') === 'null') ) {
             this.nav.present(this.modal);
         } else {
-            document.getElementById("hierUserName").innerHTML = 'Willkommen zurueck ' + window.localStorage.getItem('myName') + '!';
+            // document.getElementById("hierUserName").innerHTML = 'Willkommen zurueck ' + window.localStorage.getItem('myName') + '!';
         }
 
 
