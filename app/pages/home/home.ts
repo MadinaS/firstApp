@@ -22,8 +22,8 @@ import {subWindowsObject} from "./subWindows/subWindowsObject";
 })
 export class HomePage {
 
-  public userName;
-  private platform;
+    public userName;
+    private platform;
     public modal;
 
   constructor(private nav: NavController,
