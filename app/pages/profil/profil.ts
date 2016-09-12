@@ -4,6 +4,7 @@ import { NavController } from 'ionic-angular';
 import {Camera} from "ionic-native/dist/index";
 
 import {myCam} from "./cameraEvents";
+import {cameraActionSheet} from "../validators/activeDialogs";
 // import {ThreeDeeTouch} from "ionic-native/dist/index";
 
 /*
@@ -29,19 +30,58 @@ export class ProfilPage {
     this.camera = Camera;
 
   }
-
-  askAction() {
-
-
-
-  }
+  //
+  // askAction() {
+  //
+  //
+  //
+  // }
 
 
   //-----------------------------------------
   showCamera() {
-    myCam.showCamera();
 
-  console.log('hier2');
+    // let actionSheet = this.actionSheetCtrl.create({
+    //   title: 'Hello',
+    //   buttons: [{
+    //     text: 'Ok',
+    //     handler: () => {
+    //       // // user has clicked the action sheet button
+    //       // // begin the action sheet's dimiss transition
+    //       // let navTransition = actionSheet.dismiss();
+    //       //
+    //       // // start some async method
+    //       // someAsyncOperation().then(() => {
+    //       //   // once the async operation has completed
+    //       //   // then run the next nav transition after the
+    //       //   // first transition has finished animating out
+    //       //
+    //       //   navTransition.then(() => {
+    //       //     this.nav.pop();
+    //       //   });
+    //       // });
+    //       // return false;
+    //     }
+    //   }]
+    // });
+    //
+    // actionSheet.present();
+
+
+
+
+    let cameraAS = new cameraActionSheet();
+
+    cameraAS.presentActionSheet();
+    
+    
+    // let a = new myCam();
+    // a.showCamera();
+    //
+    // console.log('hier2');
+    
+    
+    
   // var options = this.setOptions();
   // //   // var camera = Camera;
   // //   this.camera.getPicture(function cameraSuccess(imageUri) {

@@ -10,33 +10,40 @@ import {Camera, CameraOptions} from "ionic-native/dist/index";
 
 
 export class myCam {
-    static options = CameraOptions;
+    public options;
 
     constructor() {
-    }
-
-    static showCamera() {
-        console.log('hier');
-        // var options = CameraOptions();
         this.options = {
             quality: 50,
             destinationType: Camera.DestinationType.DATA_URL,
             sourceType: Camera.PictureSourceType.SAVEDPHOTOALBUM,
             allowEdit: true,
             encodingType: Camera.EncodingType.PNG,
-            targetWidth: '1200px',
-            targetHeight: '1600px',
+            // targetWidth: '1200px',
+            // targetHeight: '1600px',
             correctOrientation: true
         };
+    }
 
-        alert('new hier');
+    showCamera() {
 
-        // Camera.getPicture(this.options).then(function(imageData) {
-        //     alert('new hier');
-        //     // $scope.srcImage = "data:image/jpeg;base64," + imageData;
-        // }, function(err) {
-        //     // error
-        // });
+        // this.options = {
+        //     quality: 50,
+        //     destinationType: Camera.DestinationType.DATA_URL,
+        //     sourceType: Camera.PictureSourceType.SAVEDPHOTOALBUM,
+        //     allowEdit: true,
+        //     encodingType: Camera.EncodingType.PNG,
+        //     targetWidth: '1200px',
+        //     targetHeight: '1600px',
+        //     correctOrientation: true
+        // };
+
+        Camera.getPicture(this.options).then(function(imageData) {
+            alert('new hier');
+            // $scope.srcImage = "data:image/jpeg;base64," + imageData;
+        }, function(err) {
+            // error
+        });
     }
 }
 
