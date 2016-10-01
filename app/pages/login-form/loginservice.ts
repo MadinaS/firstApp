@@ -11,11 +11,6 @@ export class LoginService {
   }
 
   searchMovies(name, pass) {
-    // var http = Http;
-    // var url = 'http://deviamais.formulardb.de/auth/login?login=Login&username=' + name + '&password=' + pass;
-    // var response = this.http.get(url).map(res => res.json());
-    // return response;
-
 
     var http = Http;
 
@@ -29,42 +24,39 @@ export class LoginService {
     return response;
   }
 
-  loginToServer(name, pass) {
-    // var http = Http;
-    // var url = 'http://deviamais.formulardb.de/auth/login?login=Login&username=' + name + '&password=' + pass;
-    // var response = this.http.get(url).map(res => res.json());
-    // return response;
-
+  loginToServer(vorname, nachname, appkey) {
 
     var http = Http;
+    var url = 'https://helpdesk.npo-applications.de/kitaplusapp/benutzer/appkey/' + appkey + '/vorname/' + vorname + '/nachname/' + nachname;
+    var response = this.http.get(url).map(res => res.json());
 
-    let body = JSON.stringify({ 'password': 'dudh1234', 'username': 'admin' });
-    let headers = new Headers({ 'Content-Type': 'application/json',
-                      'Access-Control-Allow-Origin': '*',
-                      'Access-Control-Allow-Headers': 'Accept'});
-    let options = new RequestOptions({ headers: headers });
-
-    var url = 'http://localhost/shopware/app/login/';
-    var response = this.http.post(url, body, options).map(res => res.json());
-    // console.log(response.["success"]);
     return response;
+
   }
 
 
-//   registerMe(name, pass) {
-//     var details = {
-//       'email': 'email@example.com',
-//       'password': 'secret'
-//     }
-//
-// // optionally pass a username
-// // details.username = 'ionitron';
-//
-//
-//
-//     Ionic.Auth.signup(details).then(signupSuccess, signupFailure);
-//   }
-
-
-
 }
+
+
+
+
+//------------------------------------------------- POST REQUESTS ------------------------------------------------------
+
+// var http = Http;
+//
+// let body = JSON.stringify({ 'password': 'dudh1234', 'username': 'admin' });
+// let headers = new Headers({ 'Content-Type': 'application/json',
+//                   'Access-Control-Allow-Origin': '*',
+//                   'Access-Control-Allow-Headers': 'Accept'});
+// let options = new RequestOptions({ headers: headers });
+//
+// var url = 'http://localhost/shopware/app/login/';
+// var response = this.http.post(url, body, options).map(res => res.json());
+// // console.log(response.["success"]);
+// return response;
+
+//
+// var url = 'https://helpdesk.npo-applications.de/kitaplusapp/benutzer/appkey/:appkey/vorname/:vorname/nachname/:nachname';
+// var response = this.http.post(url, body, options).map(res => res.json());
+// // console.log(response.["success"]);
+// return response;

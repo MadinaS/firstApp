@@ -8,27 +8,107 @@
 
 <ion-content padding ion-modal ion-modal-inner >
   <form [ngFormModel]="authForm" (ngSubmit)="onSubmit(authForm.value)"  >
-    <ion-item [class.error]="!username.valid && username.touched">
-      <ion-label floating>Username</ion-label>
-      <ion-input type="text" value="" [ngFormControl]="username"></ion-input>
+
+    <ion-item [class.error]="!vorname.valid && vorname.touched">
+    <ion-label floating>vorname</ion-label>
+    <ion-input type="text" value="Kevin1" [ngFormControl]="vorname"></ion-input>
     </ion-item>
-    <div *ngIf="username.hasError('required') && username.touched"
-         class="error-box">* Username is required!</div>
-    <div *ngIf="username.hasError('minlength') && username.touched"
-         class="error-box">* Minimum username length is 6!</div>
-    <div *ngIf="username.hasError('checkFirstCharacterValidator') && username.touched"
-         class="error-box">* Username cant't start with number!</div>
-    <ion-item [class.error]="!password.valid && password.touched">
-      <ion-label floating>Password</ion-label>
-      <ion-input type="text" value="" [ngFormControl]="password" ></ion-input>
+
+    <div *ngIf="vorname.hasError('required') && vorname.touched"
+    class="error-box">* vorname is required!</div>
+    <div *ngIf="vorname.hasError('minlength') && vorname.touched"
+    class="error-box">* Minimum vorname length is 1!</div>
+    <div *ngIf="vorname.hasError('checkFirstCharacterValidator') && vorname.touched"
+    class="error-box">* vorname cant't start with number!</div>
+
+<!-- -&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;-->
+
+    <ion-item [class.error]="!nachname.valid && nachname.touched">
+      <ion-label floating>nachname</ion-label>
+      <ion-input type="text" value="Horst1" [ngFormControl]="nachname"></ion-input>
     </ion-item>
-    <div *ngIf="password.hasError('required') && password.touched"
-         class="error-box">* Password is required</div>
-    <div *ngIf="password.hasError('minlength') && password.touched"
-         class="error-box">* Minimum password length is 8!</div>
-    <div *ngIf="password.hasError('checkFirstCharacterValidator') && password.touched"
-         class="error-box">* Password cant't start with number!</div>
+
+    <div *ngIf="nachname.hasError('required') && nachname.touched"
+         class="error-box">* nachname is required!</div>
+    <div *ngIf="nachname.hasError('minlength') && nachname.touched"
+         class="error-box">* Minimum nachname length is 1!</div>
+    <div *ngIf="nachname.hasError('checkFirstCharacterValidator') && nachname.touched"
+         class="error-box">* nachname cant't start with number!</div>
+
+    <!-- -&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;-->
+
+    <ion-item [class.error]="!appkey.valid && appkey.touched">
+      <ion-label floating>appkey</ion-label>
+      <ion-input type="text" value="abcd12341" [ngFormControl]="appkey"></ion-input>
+    </ion-item>
+
+    <div *ngIf="appkey.hasError('required') && appkey.touched"
+         class="error-box">* appkey is required!</div>
+    <div *ngIf="appkey.hasError('minlength') && appkey.touched"
+         class="error-box">* Minimum appkey length is 1!</div>
+    <!--<div *ngIf="appkey.hasError('checkFirstCharacterValidator') && appkey.touched"-->
+         <!--class="error-box">* appkey cant't start with number!</div>-->
+
+    <!--<ion-item [class.error]="!password.valid && password.touched">-->
+    <!--<ion-label floating>Password</ion-label>-->
+    <!--<ion-input type="text" value="" [ngFormControl]="password" ></ion-input>-->
+    <!--</ion-item>-->
+
+    <!--<div *ngIf="password.hasError('required') && password.touched"-->
+    <!--class="error-box">* Password is required</div>-->
+    <!--<div *ngIf="password.hasError('minlength') && password.touched"-->
+    <!--class="error-box">* Minimum password length is 8!</div>-->
+    <!--<div *ngIf="password.hasError('checkFirstCharacterValidator') && password.touched"-->
+    <!--class="error-box">* Password cant't start with number!</div>-->
+
+    <!--<ion-item>-->
+      <!--<ion-label floating>vorname</ion-label>-->
+      <!--<ion-input type="text" value="Kevin" name="vorname" ></ion-input>-->
+    <!--</ion-item>-->
+
+    <!--<ion-item>-->
+      <!--<ion-label floating>nachname</ion-label>-->
+      <!--<ion-input type="text" value="Horst" name="nachname" ></ion-input>-->
+    <!--</ion-item>-->
+
+
+    <!--<ion-item>-->
+      <!--<ion-label floating>appkey</ion-label>-->
+      <!--<ion-input type="text" value="abcd1234" name="appkey" ></ion-input>-->
+    <!--</ion-item>-->
+
+
+
+
+
+
+
     <br/><br/>
-    <button type="submit" class="custom-button" [disabled]="!authForm.valid" block>Submit</button>
+    <button type="submit" class="custom-button"  block>Submit</button>
   </form>
 </ion-content>
+
+
+<!--<ion-item [class.error]="!username.valid && username.touched">-->
+  <!--<ion-label floating>Username</ion-label>-->
+  <!--<ion-input type="text" value="" [ngFormControl]="username"></ion-input>-->
+<!--</ion-item>-->
+
+<!--<div *ngIf="username.hasError('required') && username.touched"-->
+     <!--class="error-box">* Username is required!</div>-->
+<!--<div *ngIf="username.hasError('minlength') && username.touched"-->
+     <!--class="error-box">* Minimum username length is 6!</div>-->
+<!--<div *ngIf="username.hasError('checkFirstCharacterValidator') && username.touched"-->
+     <!--class="error-box">* Username cant't start with number!</div>-->
+
+<!--<ion-item [class.error]="!password.valid && password.touched">-->
+  <!--<ion-label floating>Password</ion-label>-->
+  <!--<ion-input type="text" value="" [ngFormControl]="password" ></ion-input>-->
+<!--</ion-item>-->
+
+<!--<div *ngIf="password.hasError('required') && password.touched"-->
+     <!--class="error-box">* Password is required</div>-->
+<!--<div *ngIf="password.hasError('minlength') && password.touched"-->
+     <!--class="error-box">* Minimum password length is 8!</div>-->
+<!--<div *ngIf="password.hasError('checkFirstCharacterValidator') && password.touched"-->
+     <!--class="error-box">* Password cant't start with number!</div>-->

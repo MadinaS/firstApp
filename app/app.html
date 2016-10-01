@@ -5,16 +5,25 @@
   </ion-toolbar>
 
   <ion-content scroll="false">
-    <div style="text-align: center;margin-bottom: 50px;margin-top: 30px;background-color: #4A397D;">
-      <div id="divStyle" style=""></div>
-      <div style="margin-top: 20px;color: #B6AFCB;font-size: 20px;"> <b>{{navVariables.name}}</b> </div>
+    <div style="text-align: center;margin-bottom: 50px;margin-top: 30px;">
+      <div id="menu_avatarDiv" style=""></div>
+      <div id="userName_menu" style="margin-top: 20px;color: #B6AFCB;font-size: 20px;"> <b>{{navVariables.name}}</b> </div>
       <div style="margin-top: 10px;color: #B6AFCB;font-size: 12px;"> <i>{{navVariables.beschr}}</i> </div>
     </div>
 
     <ion-list>
+
       <button ion-item *ngFor="let p of pages" (click)="openPage(p)" class="myMenuButtons">
-        {{p.title}}
+        <div style="display: flex;align-items: center">
+          <div style="float: left;">
+            <ion-icon name='{{p.icon}}' style="font-size: 35px;color: #b6afcb;"></ion-icon>
+          </div>
+          <div style="float: left;margin-left: 15px;">
+            {{p.title}}
+          </div>
+        </div>
       </button>
+
     </ion-list>
   </ion-content>
 

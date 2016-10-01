@@ -1,4 +1,5 @@
-﻿import { ActionSheetController } from 'ionic-angular'
+﻿import {ActionSheet, ActionSheetOptions} from 'ionic-angular'
+import {myCam} from "../profil/cameraEvents";
 
 
 
@@ -8,27 +9,37 @@ export class cameraActionSheet {
 
     //noinspection TypeScriptUnresolvedVariable
     constructor() {
-        this.actionSheetCtrl = ActionSheetController;
+        this.actionSheetCtrl = ActionSheet;
     }
 
     presentActionSheet() {
-        //noinspection TypeScriptUnresolvedFunction
+        let cameraObj = new myCam();
+
         let actionSheet = this.actionSheetCtrl.create({
-            title: 'Modify your album',
+            title: 'Foto ändern',
             buttons: [
                 {
-                    text: 'Destructive',
+                    text: 'Foto aufnehmen',
+                    // role: 'destructive',
+                    handler: () => {
+                        cameraObj.showCamera();
+                    }
+                },
+                {
+                    text: 'Foto auswählen',
+                    handler: () => {
+                        cameraObj.showAlbum();
+                    }
+                },
+                {
+                    text: 'Foto löschen',
                     role: 'destructive',
                     handler: () => {
-                        console.log('Destructive clicked');
+                        // cameraObj.showAlbum();
                     }
-                },{
-                    text: 'Archive',
-                    handler: () => {
-                        console.log('Archive clicked');
-                    }
-                },{
-                    text: 'Cancel',
+                },
+                {
+                    text: 'Abbrechen',
                     role: 'cancel',
                     handler: () => {
                         console.log('Cancel clicked');
@@ -36,8 +47,10 @@ export class cameraActionSheet {
                 }
             ]
         });
-        actionSheet.present();
+
+        return actionSheet;
     }
+
 
 }
 

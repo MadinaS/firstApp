@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import {NavController, ActionSheet, ViewController} from 'ionic-angular';
 // import './cameraEvents';
 import {Camera} from "ionic-native/dist/index";
 
@@ -21,58 +21,66 @@ export class ProfilPage {
   navVariables: {name: string, beschr: string};
   public threeDeeTouch;
   public camera;
+  public actionSheetCtrl;
 
-  constructor(private nav: NavController) {
+  constructor(private nav: NavController, public viewCtrl: ViewController) {
+
     this.navVariables =
     { name: window.localStorage.getItem('myName'),
-      beschr: window.localStorage.getItem('beschreibung') };
+      beschr: window.localStorage.getItem('beschreibung')};
 
     this.camera = Camera;
+    this.actionSheetCtrl = ActionSheet;
 
   }
-  //
-  // askAction() {
-  //
-  //
-  //
-  // }
+
+  ngAfterViewInit() { // THERE IT IS!!!
+
+    if ( window.localStorage.getItem('myAvatar_' + window.localStorage.getItem('accessTocken')) === "undefined" || window.localStorage.getItem('myAvatar_' + window.localStorage.getItem('accessTocken')) === null ) {
+      //
+    } else {
+      document.getElementById("avatarDiv").style.background = window.localStorage.getItem('myAvatar_' + window.localStorage.getItem('accessTocken'));
+    }
+
+    console.log( window.localStorage.getItem('myAvatar_' + window.localStorage.getItem('accessTocken')) );
+
+  }
 
 
   //-----------------------------------------
   showCamera() {
 
     // let actionSheet = this.actionSheetCtrl.create({
-    //   title: 'Hello',
-    //   buttons: [{
-    //     text: 'Ok',
-    //     handler: () => {
-    //       // // user has clicked the action sheet button
-    //       // // begin the action sheet's dimiss transition
-    //       // let navTransition = actionSheet.dismiss();
-    //       //
-    //       // // start some async method
-    //       // someAsyncOperation().then(() => {
-    //       //   // once the async operation has completed
-    //       //   // then run the next nav transition after the
-    //       //   // first transition has finished animating out
-    //       //
-    //       //   navTransition.then(() => {
-    //       //     this.nav.pop();
-    //       //   });
-    //       // });
-    //       // return false;
+    //   title: 'Modify your album',
+    //   buttons: [
+    //     {
+    //       text: 'Destructive',
+    //       role: 'destructive',
+    //       handler: () => {
+    //         console.log('Destructive clicked');
+    //       }
+    //     },
+    //     {
+    //       text: 'Archive',
+    //       handler: () => {
+    //         console.log('Archive clicked');
+    //       }
+    //     },
+    //     {
+    //       text: 'Cancel',
+    //       role: 'cancel',
+    //       handler: () => {
+    //         console.log('Cancel clicked');
+    //       }
     //     }
-    //   }]
+    //   ]
     // });
-    //
-    // actionSheet.present();
 
 
 
 
     let cameraAS = new cameraActionSheet();
-
-    cameraAS.presentActionSheet();
+    this.nav.present( cameraAS.presentActionSheet() );
     
     
     // let a = new myCam();
