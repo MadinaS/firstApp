@@ -21,9 +21,13 @@
 
 <ion-content padding>
 
+    <ion-searchbar [(ngModel)]="people"
+                   [showCancelButton]="true">
+    </ion-searchbar>
+
   <ion-list>
 
-    <button ion-item (click)="openPage(1)" class="myMenuButtons" >
+    <button ion-item (click)="openPage(1)" class="" >
       <div style="display: flex;align-items: center">
         <div class="div_iconClass"  [ngStyle]="{'background': trololo, 'width': '40px'}" >
           <!--<ion-icon name='ios-person' style="font-size: 35px;color: #b6afcb;"></ion-icon>-->
@@ -32,11 +36,11 @@
 
           <div style="width: 375px; height: 100%;">
             <div style="display: inline;">
-              <div style="float: left;font-weight: bold;">Server</div>
+              <div style="float: left;font-weight: bold;"><h2><b>Server</b></h2></div>
               <div style="float: right;color: #b6afcb;">Time</div>
             </div>
             <div style="clear: both;"></div>
-            <div class="title">Message Titel</div>
+            <div class="title"><h3>Message Titel</h3></div>
             <div style="color: #b6afcb;">Message</div>
           </div>
 

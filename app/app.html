@@ -1,31 +1,36 @@
 <ion-menu [content]="content" scroll="false" style="overflow: unset;">
 
   <ion-toolbar>
-    <ion-title>Menu</ion-title>
+    <ion-title></ion-title>
   </ion-toolbar>
 
-  <ion-content scroll="false">
-    <div style="text-align: center;margin-bottom: 50px;margin-top: 30px;">
-      <div id="menu_avatarDiv" style=""></div>
-      <div id="userName_menu" style="margin-top: 20px;color: #B6AFCB;font-size: 20px;"> <b>{{navVariables.name}}</b> </div>
-      <div style="margin-top: 10px;color: #B6AFCB;font-size: 12px;"> <i>{{navVariables.beschr}}</i> </div>
-    </div>
-
-    <ion-list>
-
-      <button ion-item *ngFor="let p of pages" (click)="openPage(p)" class="myMenuButtons">
-        <div style="display: flex;align-items: center">
-          <div style="float: left;">
-            <ion-icon name='{{p.icon}}' style="font-size: 35px;color: #b6afcb;"></ion-icon>
-          </div>
-          <div style="float: left;margin-left: 15px;">
-            {{p.title}}
-          </div>
+  <ion-content scroll="false" id="menuContentStyle">
+    <div style="background-color: #263238;padding-bottom: 40px;padding-top: 30px;border-bottom: 15px solid #1B2328;">
+        <div style="text-align: center;">
+            <div id="menu_avatarDiv" style=""></div>
+            <div id="userName_menu" style="margin-top: 20px;color: #F1F1F1;font-size: 20px;"> <b>{{navVariables.name}}</b> </div>
+            <div style="margin-top: 10px;color: #F1F1F1;font-size: 12px;"> <i>{{navVariables.beschr}}</i> </div>
         </div>
-      </button>
+    </div>
+      
+
+      
+    <ion-list no-lines>
+
+        <button ion-item ion-button detail-none  *ngFor="let p of pages" (click)="openPage(p)" class="myMenuButtons ">
+            <div style="display: flex;align-items: center">
+                <div style="float: left;">
+                    <ion-icon name='{{p.icon}}' style="font-size: 35px;color: #F36F21;"></ion-icon>
+                </div>
+                <div style="float: left;margin-left: 15px;" class="{{p.active}}">
+                    {{p.title}}
+                </div>
+            </div>
+        </button>
 
     </ion-list>
-  </ion-content>
+
+</ion-content>
 
 </ion-menu>
 

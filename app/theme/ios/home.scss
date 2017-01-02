@@ -15,21 +15,39 @@
 //}
 
 ion-title {
-  background: black;
+  background: unset;
+background-color: #263238;
+  //background: black;
 }
 
 .toolbar-title {
   color: #b6afcb;
+  background-color: #263238;
 }
 
 ion-menu, ion-content, ion-list {
-  background-color: #EBEBEB;
-
+  background-color: #263238;
+/*background-color: #EBEBEB;*/
 }
 
 ion-list .myMenuButtons {
-  background-color: #EBEBEB;
+  background-color: #13181C;
+  color: #F1F1F1;
 }
+
+#menuContentStyle {
+    background-color: #13181C;
+    color: #F1F1F1;
+}
+/*.active  {
+    background-color: #F36F21; 
+    color: #F1F1F1;
+}*/
+
+button .active {
+    border-bottom: 1px solid #F36F21 !important; 
+}
+
 
 ion-content {
   overflow-x: hidden;
@@ -39,7 +57,7 @@ ion-content {
 #menu_avatarDiv {
 
   border-radius: 70px;
-  border: 1px solid white;
+  border: 2px solid #F36F21;
   width: 120px;
   height: 120px;
   margin: auto;

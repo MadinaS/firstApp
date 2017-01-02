@@ -9,6 +9,9 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/pages/home/home.ts" afterPath="$PROJECT_DIR$/app/pages/home/home.ts" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/pages/login-form/loginservice.ts" afterPath="$PROJECT_DIR$/app/pages/login-form/loginservice.ts" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/pages/login-form/modalLoginPage.html" afterPath="$PROJECT_DIR$/app/pages/login-form/modalLoginPage.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/pages/nachricht/nachricht.html" afterPath="$PROJECT_DIR$/app/pages/nachricht/nachricht.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/pages/nachrichten/nachrichten.html" afterPath="$PROJECT_DIR$/app/pages/nachrichten/nachrichten.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/pages/nachrichten/nachrichten.ts" afterPath="$PROJECT_DIR$/app/pages/nachrichten/nachrichten.ts" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/pages/profil/cameraEvents.ts" afterPath="$PROJECT_DIR$/app/pages/profil/cameraEvents.ts" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/pages/profil/profil.html" afterPath="$PROJECT_DIR$/app/pages/profil/profil.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/pages/profil/profil.ts" afterPath="$PROJECT_DIR$/app/pages/profil/profil.ts" />
@@ -176,11 +179,11 @@
           <file leaf-file-name="nachrichten.ts" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/pages/nachrichten/nachrichten.ts">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1462">
-                  <caret line="89" column="78" selection-start-line="89" selection-start-column="78" selection-end-line="89" selection-end-column="78" />
+                <state relative-caret-position="391">
+                  <caret line="54" column="45" selection-start-line="54" selection-start-column="45" selection-end-line="54" selection-end-column="45" />
                   <folding>
                     <element signature="e#0#42#0" expanded="true" />
-                    <marker date="1475132193924" expanded="true" signature="6794:6819" ph="SELECT * FRO... nachrichten" />
+                    <marker date="1475326395600" expanded="true" signature="6638:6663" ph="SELECT * FRO... nachrichten" />
                   </folding>
                 </state>
               </provider>
@@ -189,7 +192,7 @@
           <file leaf-file-name="nachricht.ts" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/pages/nachricht/nachricht.ts">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="221">
+                <state relative-caret-position="238">
                   <caret line="14" column="57" selection-start-line="14" selection-start-column="57" selection-end-line="14" selection-end-column="57" />
                   <folding>
                     <element signature="e#0#42#0" expanded="true" />
@@ -198,11 +201,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="nachrichten.html" pinned="false" current-in-tab="false">
+          <file leaf-file-name="nachrichten.html" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/app/pages/nachrichten/nachrichten.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="238">
-                  <caret line="14" column="35" selection-start-line="14" selection-start-column="4" selection-end-line="14" selection-end-column="35" />
+                <state relative-caret-position="225">
+                  <caret line="34" column="75" selection-start-line="34" selection-start-column="75" selection-end-line="34" selection-end-column="75" />
                   <folding>
                     <element signature="n#style#0;n#div#0;n#button#0;n#ion-list#0;n#ion-content#0;n#!!top" expanded="true" />
                     <element signature="n#style#0;n#div#1;n#div#0;n#button#0;n#ion-list#0;n#ion-content#0;n#!!top" expanded="true" />
@@ -241,21 +244,19 @@
           <file leaf-file-name="home.scss" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/theme/ios/home.scss">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="2142">
-                  <caret line="126" column="7" selection-start-line="126" selection-start-column="7" selection-end-line="126" selection-end-column="7" />
+                <state relative-caret-position="55">
+                  <caret line="17" column="20" selection-start-line="17" selection-start-column="20" selection-end-line="17" selection-end-column="20" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="nachricht.html" pinned="false" current-in-tab="true">
+          <file leaf-file-name="nachricht.html" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/pages/nachricht/nachricht.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="153">
-                  <caret line="9" column="32" selection-start-line="9" selection-start-column="32" selection-end-line="9" selection-end-column="32" />
-                  <folding>
-                    <element signature="n#style#0;n#button#0;n#ion-navbar#0;n#ion-header#0;n#!!top" expanded="true" />
-                  </folding>
+                <state relative-caret-position="306">
+                  <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+                  <folding />
                 </state>
               </provider>
             </entry>
@@ -315,11 +316,11 @@
         <option value="$PROJECT_DIR$/app/pages/nachrichten/nachrichten.scss" />
         <option value="$PROJECT_DIR$/app/theme/android/home.scss" />
         <option value="$PROJECT_DIR$/app/pages/nachricht/nachricht.ts" />
-        <option value="$PROJECT_DIR$/app/pages/nachrichten/nachrichten.ts" />
-        <option value="$PROJECT_DIR$/app/pages/nachrichten/nachrichten.html" />
         <option value="$PROJECT_DIR$/app/app.ts" />
+        <option value="$PROJECT_DIR$/app/pages/nachrichten/nachrichten.ts" />
         <option value="$PROJECT_DIR$/app/theme/ios/home.scss" />
         <option value="$PROJECT_DIR$/app/pages/nachricht/nachricht.html" />
+        <option value="$PROJECT_DIR$/app/pages/nachrichten/nachrichten.html" />
       </list>
     </option>
   </component>
@@ -815,19 +816,19 @@
       <workItem from="1473658471059" duration="30225000" />
       <workItem from="1473773559653" duration="27362000" />
       <workItem from="1475069250387" duration="12723000" />
-      <workItem from="1475325405611" duration="3000" />
+      <workItem from="1475325405611" duration="2146000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="190981000" />
+    <option name="totallyTimeSpent" value="193124000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14447807" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14447807" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -992,6 +993,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="4308">
           <caret line="394" column="4" selection-start-line="394" selection-start-column="4" selection-end-line="394" selection-end-column="4" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1167,16 +1169,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/pages/nachricht/nachricht.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="14" column="57" selection-start-line="14" selection-start-column="57" selection-end-line="14" selection-end-column="57" />
-          <folding>
-            <element signature="e#0#42#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/app.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="408">
@@ -1209,21 +1201,59 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/app.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="83" column="5192" selection-start-line="83" selection-start-column="5192" selection-end-line="83" selection-end-column="5192" />
+          <folding>
+            <element signature="e#0#51#0" expanded="true" />
+            <marker date="1475135737132" expanded="true" signature="2467:2499" ph="DROP TABLE I... " />
+            <marker date="1475135737132" expanded="true" signature="2534:2692" ph="CREATE TABLE... nachrichten" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/pages/nachrichten/nachrichten.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1462">
-          <caret line="89" column="78" selection-start-line="89" selection-start-column="78" selection-end-line="89" selection-end-column="78" />
+        <state relative-caret-position="391">
+          <caret line="54" column="45" selection-start-line="54" selection-start-column="45" selection-end-line="54" selection-end-column="45" />
           <folding>
             <element signature="e#0#42#0" expanded="true" />
-            <marker date="1475132193924" expanded="true" signature="6794:6819" ph="SELECT * FRO... nachrichten" />
+            <marker date="1475326395600" expanded="true" signature="6638:6663" ph="SELECT * FRO... nachrichten" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/pages/nachricht/nachricht.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="57" selection-start-line="14" selection-start-column="57" selection-end-line="14" selection-end-column="57" />
+          <folding>
+            <element signature="e#0#42#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/theme/ios/home.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="55">
+          <caret line="17" column="20" selection-start-line="17" selection-start-column="20" selection-end-line="17" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/pages/nachricht/nachricht.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/pages/nachrichten/nachrichten.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="35" selection-start-line="14" selection-start-column="4" selection-end-line="14" selection-end-column="35" />
+        <state relative-caret-position="225">
+          <caret line="34" column="75" selection-start-line="34" selection-start-column="75" selection-end-line="34" selection-end-column="75" />
           <folding>
             <element signature="n#style#0;n#div#0;n#button#0;n#ion-list#0;n#ion-content#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#1;n#div#0;n#button#0;n#ion-list#0;n#ion-content#0;n#!!top" expanded="true" />
@@ -1254,36 +1284,6 @@
             <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#button#2;n#ion-list#0;n#ion-content#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#1;n#div#0;n#div#1;n#div#0;n#button#2;n#ion-list#0;n#ion-content#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#3;n#div#0;n#div#1;n#div#0;n#button#2;n#ion-list#0;n#ion-content#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/theme/ios/home.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2142">
-          <caret line="126" column="7" selection-start-line="126" selection-start-column="7" selection-end-line="126" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/app.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="83" column="5192" selection-start-line="83" selection-start-column="5192" selection-end-line="83" selection-end-column="5192" />
-          <folding>
-            <element signature="e#0#51#0" expanded="true" />
-            <marker date="1475135737132" expanded="true" signature="2467:2499" ph="DROP TABLE I... " />
-            <marker date="1475135737132" expanded="true" signature="2534:2692" ph="CREATE TABLE... nachrichten" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/pages/nachricht/nachricht.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="32" selection-start-line="9" selection-start-column="32" selection-end-line="9" selection-end-column="32" />
-          <folding>
-            <element signature="n#style#0;n#button#0;n#ion-navbar#0;n#ion-header#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>

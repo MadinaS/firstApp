@@ -1,7 +1,6 @@
 import {Component, ViewChild} from '@angular/core';
 import {ionicBootstrap, Platform, MenuController, Nav} from 'ionic-angular';
 import {StatusBar, SQLite} from 'ionic-native';
-import {HelloIonicPage} from './pages/hello-ionic/hello-ionic';
 import {ProfilPage} from './pages/profil/profil';
 import {HomePage} from "./pages/home/home";
 import {LoginFormPage} from "./pages/login-form/login-form";
@@ -16,7 +15,7 @@ class MyApp {
   @ViewChild(Nav) nav: Nav;
 
   rootPage: any = HomePage;
-  pages: Array<{title: string, component: any, icon: string}>;
+  pages: Array<{ title: string, component: any, icon: string, active: string}>;
   navVariables: {name: string, beschr: string};
 
   constructor(
@@ -44,11 +43,11 @@ class MyApp {
 
     // set our app's pages
     this.pages = [
-      { title: 'Home', component: HomePage, icon: 'home' },
-      { title: 'Hello Ionic', component: HelloIonicPage, icon: 'heart-outline' },
-      { title: 'Einstellungen', component: ProfilPage, icon: 'settings-outline' },
-      { title: 'Postfach', component: NachrichtenPage, icon: 'settings-outline' },
-      { title: 'Abmelden', component: HomePage, icon: 'log-out' }
+        { title: 'Home', component: HomePage, icon: 'home', active: 'active' },
+        { title: 'Postfach', component: NachrichtenPage, icon: 'mail-outline', active: '' },
+        { title: 'Einstellungen', component: ProfilPage, icon: 'settings-outline', active: '' },
+      
+        { title: 'Abmelden', component: HomePage, icon: 'log-out', active: '' }
     ];
 
     this.navVariables =
@@ -107,8 +106,16 @@ class MyApp {
   }
 
   openPage(page) {
+      this.pages = [
+          { title: 'Home', component: HomePage, icon: 'home', active: (page.title === 'Home') ? "active" : "" },
+          { title: 'Postfach', component: NachrichtenPage, icon: 'mail-outline', active: (page.title === 'Postfach') ? "active" : "" },
+          { title: 'Einstellungen', component: ProfilPage, icon: 'settings-outline', active: (page.title === 'Einstellungen') ? "active" : "" },
+
+          { title: 'Abmelden', component: HomePage, icon: 'log-out', active: '' }
+      ];
     // close the menu when clicking a link from the menu
-    this.menu.close();
+      this.menu.toggle();
+      //this.menu.close();
 
     if ( page.title == 'Abmelden' ) {
       window.localStorage.setItem('accessTocken', null);
@@ -116,6 +123,9 @@ class MyApp {
     }
     // navigate to the new page if it is not the current page
     this.nav.setRoot(page.component);
+
+
+
   }
 
 

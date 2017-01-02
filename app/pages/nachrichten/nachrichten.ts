@@ -26,6 +26,10 @@ export class NachrichtenPage {
     this.database = new SQLite();
     this.database.openDatabase({name: "data.db", location: "default"}).then(() => {
       this.refresh();
+
+
+
+
     }, (error) => {
       console.log("ERROR: ", error);
     });
@@ -41,17 +45,14 @@ export class NachrichtenPage {
   }
 
   openPage(people) {
-    // close the menu when clicking a link from the menu
-    this.menu.close();
+    // // close the menu when clicking a link from the menu
+    // this.menu.close();
+    //
+    // this.nav.setRoot(NachrichtPage, {
+    //       id: people
+    //     });
 
-    // if ( people.title == 'Abmelden' ) {
-    //   window.localStorage.setItem('accessTocken', null);
-    //   window.localStorage.setItem('myName', null);
-    // }
-    // navigate to the new page if it is not the current page
-    this.nav.setRoot(NachrichtPage, {
-          id: people
-        });
+    this.nav.push(NachrichtPage, { id: 42 });
   }
 
   public refresh() {
