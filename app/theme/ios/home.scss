@@ -21,7 +21,7 @@ background-color: #263238;
 }
 
 .toolbar-title {
-  color: #b6afcb;
+  color: #F1F1F1;
   background-color: #263238;
 }
 
@@ -33,6 +33,23 @@ ion-menu, ion-content, ion-list {
 ion-list .myMenuButtons {
   background-color: #13181C;
   color: #F1F1F1;
+}
+
+ion-list .postList {
+  background-color: #EFEFEF;
+  color: #BABABA;
+}
+
+.postItem_Absender {
+    float: left;
+    font-weight: bold;
+    color: #f36f21;
+}
+
+.postItem_Text {
+    float: left;
+    font-weight: bold;
+    color: #f36f21;
 }
 
 #menuContentStyle {
@@ -71,7 +88,7 @@ ion-content {
   width: 120px;
   height: 120px;
   margin: auto;
-  border: 1px solid white;
+  border: 2px solid #F36F21;
 }
 
 .otherDiv {
@@ -139,9 +156,10 @@ ion-content {
 
 .button {
   background-color: unset;
-  color: #b6afcb;
+  color: #F1F1F1;
 }
 
 .button.activated {
   background-color: unset;
 }
+
