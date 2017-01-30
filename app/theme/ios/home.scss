@@ -121,7 +121,7 @@ ion-content {
 }
 
 .toolbar-background {
-  //background-color: #4A397D;
+  background-color: #263238;
 }
 
 .div_iconClass {
@@ -161,5 +161,14 @@ ion-content {
 
 .button.activated {
   background-color: unset;
+}
+
+#navBarHier {
+  color: #f36f21 !important;
+  background: #263238;
+}
+
+.bar-button-default {
+  color: #f36f21 !important;
 }
 

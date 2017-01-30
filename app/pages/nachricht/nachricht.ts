@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import {NavController, NavParams, ViewController} from 'ionic-angular';
 
 /*
   Generated class for the NachrichtPage page.
@@ -12,8 +12,14 @@ import { NavController, NavParams } from 'ionic-angular';
 })
 export class NachrichtPage {
 
-  constructor(private nav: NavController, private navParams: NavParams) {
+  constructor(public nav: NavController, private navParams: NavParams, private viewCtrl: ViewController) {
+
     console.log( navParams.get('id') )
+  }
+
+  ionViewWillEnter() {
+    this.viewCtrl.showBackButton(true);
+    this.viewCtrl.setBackButtonText('Eingang');
   }
 
 }
