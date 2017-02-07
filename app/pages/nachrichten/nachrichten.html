@@ -18,78 +18,124 @@
 
 </ion-header>
 
+<!--[(ngModel)]="people"-->
 
-<ion-content style="background-color: #FFFFFF;color: $searchbar-ios-input-text-color;">
+<ion-content class="ios" style="background-color: #FFFFFF;color: $searchbar-ios-input-text-color;">
 
-    <ion-searchbar [(ngModel)]="people"
+    <ion-searchbar
                    [showCancelButton]="true" style="">
     </ion-searchbar>
 
-  <ion-list no-lines>
+  <ion-list no-lines class="ios" show-delete="true">
 
-      <button ion-item (click)="openPage(1)" class="" style="padding-left: 0px !important;color: #bababa;">
-          <div style="display: flex;align-items: center">
-              <div class="div_iconClass" style="float: left;width: 45px;height: 45px;">
-                  <ion-icon name='ios-person' style="font-size: 35px;color: #b6afcb;"></ion-icon>
+      <!--<ion-list-header>-->
+          <!--<span style="color: #f36f21;">Heute</span>-->
+      <!--</ion-list-header>-->
+
+      <ion-item-sliding no-lines>
+
+          <button (click)="openPage(1)" class="postList" ion-item style="padding-left: 0px !important;padding-top: 5px;color: #bababa;height: 100% !important;vertical-align: baseline;margin-top: 0px !important;">
+
+              <div item-left style="margin: 0 5px 10px 5px;min-height: inherit;width: auto;vertical-align: baseline;">
+                  <ion-icon name="ios-radio-button-off" item-icon></ion-icon>
               </div>
-              <div style="float: left;margin-left: 15px;width: 90%;">
-                  <div style="width: 375px; height: 100%;">
-                      <div style="display: inline;">
-                          <div class="postItem_Absender">Marion</div>
-                          <div style="float: right;color: #b6afcb;">25.10.2016</div>
-                      </div>
-                      <div style="clear: both;"></div>
-                      <div>Message Titel</div>
-                      <div style="color: #b6afcb;">Message</div>
-                  </div>
+
+              <h2 class="postItem_Absender" >Server</h2>
+              <h2 class="item-note" item-right style="color: #b6afcb;margin: 0 5px 10px 5px;min-height: inherit;"> 26.01.2017 </h2>
+
+              <p style="color: #b6afcb;width: 100%;" > Some Titel 2</p>
+              <p style="color: #b6afcb;width: 100%;" > Message 2222 message message message message message message message message...</p>
+          </button>
+
+          <ion-item-options side="right">
+              <button ion-button style="color: #f36f21;background-color: #263238;">
+                  <ion-icon name="goBack"></ion-icon>
+                  Antworten
+              </button>
+
+              <button ion-button style="color: #1B2328;background-color: #f36f21;">
+                  <ion-icon name="delete"></ion-icon>
+                  Loeschen
+              </button>
+          </ion-item-options>
+
+      </ion-item-sliding>
+
+
+      <!--================================-->
+
+      <!--<ion-item-sliding no-lines>-->
+
+          <!--<button (click)="openPage(1)" class="postList" ion-item style="padding-left: 0px !important;padding-top: 5px;color: #bababa;height: 100% !important;vertical-align: baseline;margin-top: 0px !important;">-->
+
+              <!--<div item-left style="margin: 0 5px 10px 5px;min-height: inherit;width: auto;vertical-align: baseline;">-->
+                  <!--<ion-icon name="ios-radio-button-off" item-icon></ion-icon>-->
+              <!--</div>-->
+
+              <!--<h2 class="postItem_Absender" >Madina</h2>-->
+              <!--<h2 class="item-note" item-right style="color: #b6afcb;margin: 0 5px 10px 5px;min-height: inherit;"> 26.01.2016 </h2>-->
+
+              <!--<p style="color: #b6afcb;width: 100%;" > Some Titel 2</p>-->
+              <!--<p style="color: #b6afcb;width: 100%;" > Message 2222 message message message message message message message message...</p>-->
+          <!--</button>-->
+
+          <!--<ion-item-options side="right">-->
+              <!--<button ion-button style="color: #f36f21;background-color: #263238;">-->
+                  <!--<ion-icon name="goBack"></ion-icon>-->
+                  <!--Antworten-->
+              <!--</button>-->
+
+              <!--<button ion-button style="color: #1B2328;background-color: #f36f21;">-->
+                  <!--<ion-icon name="delete"></ion-icon>-->
+                  <!--Loeschen-->
+              <!--</button>-->
+          <!--</ion-item-options>-->
+
+      <!--</ion-item-sliding>-->
+
+
+    <!--================================-->
+
+
+    <!--myMenuButtons-->
+
+      <ion-item-sliding no-lines *ngFor="let p of people;">
+          <button ion-item
+                  (click)="openPage(p.componentId)"
+                  class="ios"
+                  [ngClass]="p.bgColor === 1 ? 'postList' : ''"
+                  style="display: flex;padding-left: 0px !important;padding-top: 5px;color: #bababa;height: 100% !important;vertical-align: baseline;margin-top: 0px !important;">
+
+              <div item-left [ngStyle]="{'color': p.gelesenColor}" style="margin: 0 5px 5px 5px;min-height: inherit;width: auto;vertical-align: baseline;">
+                  <ion-icon name="{{p.iconName}}" style="font-size: 20px;" item-left item-icon></ion-icon>
               </div>
-          </div>
-      </button>
 
-    <button ion-item (click)="openPage(2)" class="postList" style="padding-left: 0px !important;color: #bababa;">
-      <div style="display: flex;align-items: center">
-        <div class="div_iconClass" style="float: left;width: 45px;height: 45px;">
-          <ion-icon name='ios-person' style="font-size: 35px;color: #b6afcb;"></ion-icon>
-        </div>
-        <div style="float: left;margin-left: 15px;width: 90%;">
+              <h2 class="postItem_Absender" style="flex: 1;" >{{p.sender}}</h2>
+              <h2 class="item-note" item-right style="color: #b6afcb;margin: 0 5px 5px 5px;min-height: inherit;" vertical-align-top>{{p.mTime}}</h2>
 
-          <div style="width: 375px; height: 100%;">
-            <div style="display: inline;">
-              <div class="postItem_Absender">Marion</div>
-              <div style="float: right;color: #b6afcb;">15.01.2016</div>
-            </div>
-            <div style="clear: both;"></div>
-            <div>Message Titel</div>
-            <div style="color: #b6afcb;">Message</div>
-          </div>
+              <p style="width: 100%;" >{{p.titel}}</p>
+              <p style="color: #b6afcb;width: 100%;" >{{p.message}}</p>
+          </button>
 
-        </div>
-      </div>
-    </button>
 
-    <button ion-item *ngFor="let p of people" (click)="openPage(p.componentId)" class="myMenuButtons" style="padding-left: 0px !important;">
-      <div style="display: flex;align-items: center">
-        <div class="div_iconClass" [ngStyle]="{'background': p.avatarStyle}">
-        <!--<div class="div_iconClass" [style.background] = '{{ p.avatarName ? "url(\'" + p.avatarStyle +  "\') no-repeat" : 'green' }}'>-->
-          <ion-icon name="{{p.avatarName}}" style="font-size: 35px;color: #b6afcb;"></ion-icon>
-        </div>
 
-        <div style="float: left;margin-left: 15px;width: 90%;">
 
-          <div style="width: 100%; height: 100%;border: 1px solid red;">
-            <div style="display: inline;">
-              <div style="float: left;font-weight: bold;">{{p.sender}}</div>
-              <div style="float: right;color: #b6afcb;">{{p.mTime}}</div>
-            </div>
-            <div style="clear: both;"></div>
-            <div class="title">{{p.titel}}</div>
-            <div style="color: #b6afcb; width: 100px;">{{p.message}}</div>
-          </div>
+          <!--[style.backgroundColor]="enable ? '#00CC00' : '#FF0000'"-->
 
-        </div>
+          <ion-item-options side="right">
+              <button ion-button style="color: #f36f21;background-color: #263238;">
+                  <ion-icon name="goBack"></ion-icon>
+                  Antworten
+              </button>
 
-      </div>
-    </button>
+              <button ion-button style="color: #1B2328;background-color: #f36f21;">
+                  <ion-icon name="delete"></ion-icon>
+                  Loeschen
+              </button>
+          </ion-item-options>
+
+      </ion-item-sliding>
+
 
   </ion-list>
 

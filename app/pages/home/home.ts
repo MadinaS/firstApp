@@ -5,6 +5,9 @@ import {CustomValidators} from '../validators/CustomValidators';
 import 'rxjs/add/operator/map';
 import {LoginService} from '../login-form/loginservice';
 import {subWindowsObject} from "./subWindows/subWindowsObject";
+import {Push, PushToken} from '@ionic/cloud-angular';
+
+
 // import { subWindowsObject } from './subWindows/subWindowsObject';
 
 /*
@@ -30,7 +33,8 @@ export class HomePage {
                 public loginService: LoginService,
                 private fb: FormBuilder,
                 plat: Platform,
-                subWindows: subWindowsObject
+                subWindows: subWindowsObject,
+                public push: Push
     )
     {
         this.platform = plat;
@@ -57,6 +61,12 @@ export class HomePage {
         } else {
         document.getElementById("hierUserName").innerHTML = 'Willkommen zurueck ' + window.localStorage.getItem('myName') + '!';
         }
+        this.push.rx.notification()
+            .subscribe((msg) => {
+                alert(msg.title + ': ' + msg.text);
+            });
+
+
     }
 
     ionViewWillLeave() { // THERE IT IS!!!
@@ -114,7 +124,8 @@ class ModalsContentPage {
       public params: NavParams,
       public viewCtrl: ViewController,
       private nav: NavController,
-      public loginService: LoginService
+      public loginService: LoginService,
+      public push: Push
   ) {
     this.authForm = new FormBuilder().group({
         'vorname': ['', Validators.compose([Validators.required, Validators.minLength(1), CustomValidators.checkFirstCharacterValidator])],
@@ -138,10 +149,23 @@ class ModalsContentPage {
               console.log(data);
 
             if ( data[0] != undefined ) {
-                //noinspection TypeScriptUnresolvedVariable
+                
                 window.localStorage.setItem('accessTocken', data[0].appkey);
-                //noinspection TypeScriptUnresolvedVariable
                 window.localStorage.setItem('myName', data[0].vorname + ' ' + data[0].nachname);
+
+                alert('Hallo');
+
+                this.push.register().then((t: PushToken) => {
+                    alert('Token:' + t.token);
+                    return this.push.saveToken(t);
+                }).then((t: PushToken) => {
+                    alert('Token saved:' + t.token);
+                });
+
+                this.push.rx.notification()
+                    .subscribe((msg) => {
+                        alert(msg.title + ': ' + msg.text);
+                    });
 
                 // console.log( window.localStorage.getItem('myName') );
                 document.getElementById("hierUserName").innerHTML = window.localStorage.getItem('myName');

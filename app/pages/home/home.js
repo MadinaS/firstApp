@@ -68,6 +68,8 @@ var ModalsContentPage = (function () {
                     //noinspection TypeScriptUnresolvedVariable
                     window.localStorage.setItem('myName', data.myName);
                     _this.nav.push(HomePage);
+                    
+                    //
                 }
             }, function (err) {
                 console.log(err);
